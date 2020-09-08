@@ -1,0 +1,45 @@
+.mainDiv{
+    height: 109vh;
+    background-image: url(../Images/loginPgImage.jpg);
+    background-position:  center ;
+    background-size: cover;
+}
+
+.whiteBox{
+    height: 70vh;
+    background-color: white;
+    width: 35vw;
+    margin-top: 20vh;
+    border-radius: 10px;
+    margin-left: 120px;
+    box-shadow: 0px 0px 10px black;
+}
+
+.inpFld{
+    width: 100%;
+    padding: 5px;
+    height: 50px;
+    border-radius: 5px;
+    border:1px solid gray;
+    transition: all 0.2s;
+}
+
+.inpFld:focus{
+    /* box-shadow: 0px 0px 5px rgb(19, 7, 71); */
+    border:2px solid rgb(31, 10, 126);
+}
+
+.logBtn{
+    border:none;
+    background-color: black;
+    color:white;
+    padding: 10px 25px 10px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.2s;
+
+}
+
+.logBtn:hover{
+    background-color: rgb(31, 10, 126);
+}

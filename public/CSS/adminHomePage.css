@@ -1,0 +1,45 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.navBox{
+    background-color: rgb(31, 10, 126);
+    height: 100vh;
+    
+}
+
+.admLinks{
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    display: inline-block;
+   
+}
+
+
+.frlbox,.clbox,.wstbox,.prjbox{
+    height: 86vh;
+    width: 100%;
+    padding: 10px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    padding-right: 15px;
+}
+
+.frlCards,.clCards,.wsdCards{
+    height: 20vh;
+    box-shadow: 0px 0px 5px gray;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.divHead{
+    color:rgb(31, 10, 126);
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top:-10px;
+}

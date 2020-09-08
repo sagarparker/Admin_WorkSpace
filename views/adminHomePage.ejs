@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" type="image/x-icon" href="/Images/projectlogo.png"/>
+        <title>WorkSpace</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/CSS/adminHomePage.css">
+    
+     
+        
+    <!-- ANIMATE CSS LINK -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    
+    <!-- DEFAULT CSS -->
+
+    <link rel="stylesheet" href="/css/pageDefault.css">
+    
+    
+    <!-- BOOTSTRAP CSS -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- BOOTSTRAP JQUERY,JS -->
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+    
+</head>
+
+
+<body>
+
+
+<nav class="navbar  navbar-dark  navbar-expand-sm fixed-top" id="navani">
+
+            <div class="navbar-header" style="color:white" id="nav_head">
+                    <img src="/Images/projectlogo.svg" alt="logo" width="40px" height="40px" style="padding-right:0px;padding-bottom: 4px">
+                    <div class="navbar-brand">WorkSpace</div>
+                    
+            </div>
+
+            
+    
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#cnb" id="hamBtn">
+              <img src="/CSS/menu.svg" alt="" width="20px" >
+                    
+            </button>
+    
+            
+                
+            <div style="margin-left: 78vw;">
+                
+                <div style="cursor: pointer;display: inline">
+                        <i class="fas fa-sign-in-alt fa-lg">  </i> 
+                        <a  href="/workspace/logout" class="noDecoration" style="color:white;text-decoration: none;font-weight: bold">Logout</a>
+                </div>
+
+                
+            </div>
+      
+
+          
+                
+                
+</nav>
+
+
+<div class="mainDiv container-fluid">
+    <div class="row">
+        <div class="col-4 navBox ">
+            <p style="margin-top: 150px;" onclick="freelancer()" class="admLinks">Freelancers</p><br>
+            <p  onclick="client()" class="admLinks">Clients</p><br>
+            <p onclick="wst()" class="admLinks">Ws teams</p><br>
+            <p onclick="prj()" class="admLinks">Projects</p>
+        </div>
+        <div class="col-8 infoBox " style="padding-top:50px">
+          <div class="frlbox mt-4">
+            <h2 class="divHead">Freelancer details</h2>
+            <% frld.forEach(function(frl){ %>
+              <div class="frlCards">
+                <div class="row">
+                  <div class="col-2">
+                    <img src="<%= frl.Fimage %>" alt="Failed to load image" width="100px" height="100px" style="border-radius: 50%;margin-top: 4px;margin-left:10px">
+                  </div>
+                  <div class="col-4">
+                    <h3 style="margin-top:20px;font-weight:bold"><%= frl.fname %> <%= frl.lname %></h3>
+                    <h6><%= frl.designation %></h6>
+                  </div>
+                  <div class="col-3">
+                    <h3 style="margin-top:17px;margin-left: -30px;">Age : <%= frl.age %></h3>
+                    <h5 style="margin-left: -30px;"><%= frl.education %></h5>
+                  </div>
+                  <div class="col-3">
+                    <h3 style="margin-left:-30px;margin-top:15px"> In a team : <%= frl.InATeam %> </h3>
+                    <h5 style="margin-left: -30px;"><%= frl.FmembershipType %></h5>
+                  </div>
+                </div>
+                
+              </div>
+            <% }); %>
+          </div>
+          <div class="clbox mt-4">
+            <h2 class="divHead">Client details</h2>
+            <% cld.forEach(function(cld){ %>
+              <div class="clCards">
+                <div class="row">
+                  <div class="col-2">
+                    <img src="<%= cld.Cimage  %>" alt="Failed to load image" width="100px" height="100px" style="border-radius: 50%;margin-top: 4px;margin-left:10px">
+                  </div>
+                  <div class="col-4">
+                    <h3 style="margin-top:20px;font-weight:bold"><%= cld.Cname %></h3>
+                    <h5><%= cld.established %></h5>
+                  </div>
+                  <div class="col-3">
+                    <h3 style="margin-top:18px;margin-left: -45px;"><%= cld.companyType  %></h3>
+                    <h5 style="margin-left: -45px;">No of projects : <%= cld.ClientProjects.length %></h5>
+                  </div>
+                  <div class="col-3">
+                    <h5 style="margin-left:-30px;margin-top:25px"><%= cld.CSubDate %></h5>
+                    <h5 style="margin-left: -30px;"><%= cld.CmembershipType %></h5>
+                  </div>
+                </div>
+                
+              </div>
+            <% }); %>
+          </div>
+          
+          <div class="wstbox mt-4">
+            <h2 class="divHead">WorkSpace team details</h2>
+            <% wsd.forEach(function(wsd){ %>
+              <div class="wsdCards">
+                <div class="row">
+                 
+                  <div class="col-4">
+                    <h3 style="margin-top:20px;font-weight:bold"><%= wsd.teamName %></h3>
+                    <h5><%= wsd.teamCategory %></h5>
+                  </div>
+                  <div class="col-4">
+                    <h5 style="margin-top:20px;margin-left: -5px;"><%= wsd.teamDescription  %></h5>
+                   
+                  </div>
+                  <div class="col-4">
+                    <h5 style="margin-left:-10px;margin-top:25px"><span style="font-weight: bold;">No of team members : </span><%= wsd.teamMembers.length  %></h5>
+                    <h5 style="margin-left: -10px;"><span style="font-weight: bold;">No of projects done : </span><%= wsd.projectList.length %></h5>
+                  </div>
+                </div>
+                
+              </div>
+            <% }); %>
+          </div>
+          <div class="prjbox mt-4">
+            <h2 class="divHead">Project details</h2>
+            <% pjd.forEach(function(pjd){ %>
+              <div class="wsdCards">
+                <div class="row">
+                 
+                  <div class="col-4">
+                    <h3 style="margin-top:20px;font-weight:bold" class="pl-2"><%= pjd.pName %></h3>
+                    <h5 class="pl-2"><%= pjd.pType %></h5>
+                  </div>
+                  <div class="col-4">
+                    <h5 style="margin-top:20px;margin-left: -5px;"><span style="font-weight: bold;">Project active : </span><%= pjd.pActive  %></h5>
+                    <h5 style="margin-top:20px;margin-left: -5px;"><span style="font-weight: bold;">Deadline : </span><%= pjd.pDeadline  %></h5>
+                   
+                  </div>
+                  <div class="col-4">
+                    <h5 style="margin-top:20px;margin-left: -5px;"><span style="font-weight: bold;">Project progress : </span><%= pjd.prjProgress %>%</h5>
+                    <h5 style="margin-top:20px;margin-left: -5px;"><span style="font-weight: bold;">Project Budget : </span>$<%= pjd.pBudget %></h5>
+                  </div>
+                </div>
+                
+              </div>
+            <% }); %>
+          </div>
+        </div>
+    </div>
+</div>
+
+<script src="/JS/adminHomePage.js"></script>
+
+<!-- Footer -->
+
+
+
+<footer style="background:rgb(41, 39, 39)">
+
+  
+        <div class="container">
+      
+          
+          <div class="row d-flex justify-content-center pl-0 pl-sm-4">
+      
+            
+            <div class="pt-2 ">
+              <div class="mb-2 " id="footeric">
+      
+                <!-- Facebook -->
+                <a class="fb-ic" href="https://facebook.com" style="color:white;text-decoration: none ">
+                  <i class="fab fa-facebook-f fa-xs white-text mr-md-5 mr-3 fa-2x text-center"> </i>
+                </a>
+                <!-- Twitter -->
+                <a class="tw-ic" href="https://twitter.com" style="color:white;text-decoration: none ">
+                  <i class="fab fa-twitter fa-xs white-text mr-md-5 mr-3 fa-2x"> </i>
+                </a>
+                <!-- Google +-->
+                <a class="gplus-ic" href="https://google.com" style="color:white;text-decoration: none ">
+                  <i class="fab fa-google-plus-g fa-xs white-text mr-md-5 mr-3 fa-2x"> </i>
+                </a>
+                <!--Linkedin -->
+                <a class="li-ic" href="https://linkedin.com" style="color:white;text-decoration: none ">
+                  <i class="fab fa-linkedin-in fa-xs white-text mr-md-5 mr-3 fa-2x"> </i>
+                </a>
+                
+               
+                
+                
+              </div>
+            </div>
+            
+      
+          </div>
+       
+      
+        </div>
+        
+      
+      
+<div class="text-center  py-5 pr-0 pr-sm-4" style="color:white;background-color: black">© 2019 Copyright:
+          <a href="/"> WorkSpace.com</a>
+</div>
+      
+      
+</footer>
+    
+    
+                           
+
+                          
+    
+</body>
+</html>
